@@ -4,28 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rekenspel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #question {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .option {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #f0f0f0;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .option:hover {
-            background-color: #ddd;
-        }
-    </style>
+    <script src="myscripts.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Rekenspel</h1>
@@ -33,12 +13,12 @@
     <div id="options"></div>
 
     <script>
-        // Functie om een willekeurig getal tussen min en max te genereren
+        
         function getRandomNumber(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
 
-        // Functie om een willekeurige rekensom te genereren
+        
         function generateQuestion() {
             var num1 = getRandomNumber(1, 10);
             var num2 = getRandomNumber(1, 10);
@@ -61,7 +41,7 @@
             };
         }
 
-        // Functie om de opties te genereren
+        
         function generateOptions(correctAnswer) {
             var options = [correctAnswer];
             while (options.length < 4) {
@@ -73,7 +53,7 @@
             return options.sort(function() { return Math.random() - 0.5; });
         }
 
-        // Functie om de vraag en opties op de pagina weer te geven
+        
         function displayQuestion() {
             var questionObj = generateQuestion();
             var options = generateOptions(questionObj.answer);
@@ -98,7 +78,7 @@
             });
         }
 
-        // Start het spel bij het laden van de pagina
+        
         displayQuestion();
     </script>
 </body>
